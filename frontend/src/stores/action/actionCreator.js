@@ -1,6 +1,7 @@
 import {
   FetchingProducts,
-  FetchingCurrentUserRole
+  FetchingCurrentUserRole,
+  FetchingCategories
 } from "./actionType";
 const baseUrl = "http://localhost:3000";
 
@@ -10,6 +11,10 @@ export const fetchProducts = (payload) => {
 
 export const fetchRole = (payload) => {
   return { type: FetchingCurrentUserRole, payload };
+};
+
+export const fetchCategories = (payload) => {
+  return { type: FetchingCategories, payload };
 };
 
 export const getProducts = () => {
@@ -23,6 +28,21 @@ export const getProducts = () => {
     })
       .then((resp) => resp.json())
       .then((data) => dispatch(fetchProducts(data)))
+      .catch((error) => console.log(error));
+  };
+};
+
+export const getCategories = () => {
+  return async (dispatch) => {
+    await fetch(baseUrl + "/categories", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+        access_token: localStorage.access_token
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => dispatch(fetchCategories(data)))
       .catch((error) => console.log(error));
   };
 };
@@ -55,7 +75,7 @@ export const login = (formLogin) => {
 
 export const register = (formRegister) => {
   return (dispatch) => {
-    return fetch(baseUrl + "/registeradmin", {
+    return fetch(baseUrl + "/registerstaff", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

@@ -44,7 +44,7 @@ export default function Register() {
           className="content-custom border border-slate-800 bg-slate-900/70 mt-3 p-5 text-center"
           id="form"
         >
-          <div id="cta">SIGN UP </div>
+          <div id="cta">SIGN UP</div>
           <form className="signup" onSubmit={submitHandler}>
             <div className="input-wrap">
               <input
@@ -66,10 +66,6 @@ export default function Register() {
 
             <button type="submit"> Sign up </button>
           </form>
-          <br />
-          <button id="custom-2">
-            <Link to="/"> Back To Home </Link>
-          </button>
         </div>
       </div>
     </>

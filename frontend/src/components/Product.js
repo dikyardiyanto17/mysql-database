@@ -13,16 +13,13 @@ export default function Product({ index, product }) {
   const roles = useSelector((state) => state.products.role);
   const [role, setRole] = useState("");
   const dispatch = useDispatch();
-  const changeHandler = (e) => {
-    setRole(e.target.value);
-  };
 
   const deletingProduct = (id) => {
     dispatch(deleteProduct(id))
       .then(() => {
         Swal.fire({
           icon: "success",
-          title: "Success deleting user",
+          title: "Success deleting product",
         });
       })
       .then(() => {
@@ -54,7 +51,6 @@ export default function Product({ index, product }) {
           </>
         ) : (
           <>
-            <td>No action available</td>
           </>
         )}
       </tr>

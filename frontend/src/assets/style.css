@@ -178,3 +178,16 @@ input::-webkit-inner-spin-button {
 	border-radius: 0px 0px 5px 5px;
 	transition: 0.3s;
   }
+
+  .input-wrap-2 {
+    font-size: 12px;
+    color: black;
+    background-color: rgba(204, 204, 204, 0.15);
+    padding: 15px 10px 5px 10px;
+    border-bottom-color: rgba(204, 204, 204, 0.6);
+    border-bottom-style: solid;
+    border-bottom-width: 1px; 
+    border-left-color: rgba(204, 204, 204, 0.6);
+    border-left-style: solid;
+    border-left-width: 0px;
+  }

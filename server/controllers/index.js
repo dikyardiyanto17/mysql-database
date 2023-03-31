@@ -66,6 +66,15 @@ class Controller {
     }
   }
 
+  static async getCategories (req, res, next){
+    try {
+      const categories = await Category.findAll({include: {all: true, nested: true}})
+      res.status(200).json(categories)
+    } catch (error) {
+      next(error)
+    }
+  }
+
   static async currentUser (req, res, next){
     try {
       const user = await User.findByPk(req.user.UserId, {attributes: ['name', 'role']})

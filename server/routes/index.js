@@ -8,6 +8,7 @@ router.post('/registerstaff', Controller.registerStaff)
 router.post('/login', Controller.login)
 router.use(authenthication)
 router.get('/products', Controller.getProducts)
+router.get('/categories', Controller.getCategories)
 router.get('/user', Controller.currentUser)
 router.delete('/products/:id', Controller.deleteProducts)
 
